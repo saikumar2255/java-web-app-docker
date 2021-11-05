@@ -1,47 +1,25 @@
 {
-    "requiresCompatibilities": [
-        "FARGATE"
-    ],
-    "containerDefinitions": [
-        {
-            "name": "HelloWorld",
-            "image": "627132480298.dkr.ecr.ap-south-1.amazonaws.com/one:latest",
-            "resourceRequirements": null,
-            "essential": true,
-            "portMappings": [
-                {
-                    "containerPort": "8000",
-                    "protocol": "tcp"
-                }
-            ],
-            "environment": null,
-            "environmentFiles": [],
-            "secrets": null,
-            "mountPoints": null,
-            "volumesFrom": null,
-            "hostname": null,
-            "user": null,
-            "workingDirectory": null,
-            "extraHosts": null,
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-group": "/ecs/Hello_World",
-                    "awslogs-region": "ap-south-1",
-                    "awslogs-stream-prefix": "ecs"
-                }
-            },
-            "ulimits": null,
-            "dockerLabels": null,
-            "dependsOn": null,
-            "repositoryCredentials": null
-        }
-    ],
-    "volumes": [],
-    "networkMode": "awsvpc",
-    "memory": "512",
-    "cpu": "256",
-    "executionRoleArn": "<create_new>",
-    "family": "Hello_World",
-    "tags": []
+	"family": "Hello_World",
+	"networkMode": "awsvpc",
+	"containerDefinitions": [
+		{
+		"name": "Helloworld",
+		"image": "627132480298.dkr.ecr.ap-south-1.amazonaws.com/one:latest",
+		"portMappings": [
+			{
+			"containerPort": 8080,
+			"hostPort": 8080,
+			"protocol": "tcp"
+		}
+		],
+		"essential": true
+
+	}
+	],
+	"requiresCompatibilities": [
+		"FARGATE"
+	],
+	"cpu": "256",
+	"memory": "512"
+	
 }
